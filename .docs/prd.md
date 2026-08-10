@@ -144,8 +144,8 @@ Usuário final que deseja:
 3. [x] Configurar o fundo visual e o container centralizado com largura máxima 2xl.
 
 ### Fase 2 - Modelagem de dados
-4. Criar o tipo Message em src/types.
-5. Definir o estado inicial do chat com um array vazio ou com mensagens de exemplo.
+4. [x] Criar o tipo Message em src/types.
+5. [x] Definir o estado inicial do chat com um array vazio ou com mensagens de exemplo.
 
 ### Fase 3 - Renderização do chat
 6. Criar o componente de lista de mensagens.
