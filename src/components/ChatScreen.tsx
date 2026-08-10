@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MessageInput } from "./MessageInput";
-import type { Message } from "../types/message";
+import { MessageList } from "./MessageList";
+import { SenderToggle } from "./SenderToggle";
+import type { Message, MessageSender } from "../types/message";
 
 type ChatScreenProps = {
   title?: string;
@@ -24,12 +26,30 @@ export function ChatScreen({
   title = "Chat offline",
   subtitle = "Uma conversa simples e acolhedora para testar o fluxo.",
 }: ChatScreenProps) {
-  const [messages] = useState<Message[]>(initialMessages);
-  const hasMessages = messages.length > 0;
+  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [draft, setDraft] = useState("");
+  const [senderMode, setSenderMode] = useState<MessageSender>("user");
+
+  const handleSendMessage = () => {
+    const nextContent = draft.trim();
+
+    if (!nextContent) {
+      return;
+    }
+
+    const newMessage: Message = {
+      id: `message-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      sender: senderMode,
+      content: nextContent,
+    };
+
+    setMessages((currentMessages) => [...currentMessages, newMessage]);
+    setDraft("");
+  };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.7),_rgba(241,233,225,0.95))] px-4 py-6 text-stone-800 sm:px-6 lg:px-8">
-      <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-2xl flex-col rounded-[2rem] border border-stone-200/80 bg-stone-100/70 p-4 shadow-[0_20px_60px_rgba(120,89,57,0.16)] backdrop-blur sm:p-6">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),rgba(241,233,225,0.95))] px-4 py-6 text-stone-800 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-2xl flex-col rounded-4xl border border-stone-200/80 bg-stone-100/70 p-4 shadow-[0_20px_60px_rgba(120,89,57,0.16)] backdrop-blur sm:p-6">
         <header className="mb-4 flex items-center justify-between border-b border-stone-200 pb-4">
           <div>
             <h1 className="text-lg font-semibold text-stone-900">{title}</h1>
@@ -40,41 +60,21 @@ export function ChatScreen({
           </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto rounded-[1.5rem] bg-stone-50/80 p-4">
-          {hasMessages ? (
-            <div className="flex flex-col gap-3">
-              {messages.map((message) => (
-                <div
-                  key={message.id}
-                  className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
-                      message.sender === "user"
-                        ? "bg-stone-800 text-white"
-                        : "bg-white text-stone-700"
-                    }`}
-                  >
-                    <p className="text-[11px] uppercase tracking-[0.2em] opacity-70">
-                      {message.sender === "user" ? "Você" : "Robô"}
-                    </p>
-                    <p className="mt-1 whitespace-pre-wrap">{message.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="flex h-full flex-col items-center justify-center gap-3 text-center text-sm text-stone-500">
-              <p className="rounded-full bg-white px-4 py-2 shadow-sm">
-                Seu histórico aparecerá aqui.
-              </p>
-              <p>Comece escrevendo uma mensagem para abrir a conversa.</p>
-            </div>
-          )}
+        <main className="flex-1 overflow-y-auto rounded-3xl bg-stone-50/80 p-4">
+          <MessageList messages={messages} />
         </main>
 
-        <div className="mt-4">
-          <MessageInput />
+        <div className="mt-4 flex flex-col gap-3">
+          <div className="flex justify-end">
+            <SenderToggle senderMode={senderMode} onToggle={setSenderMode} />
+          </div>
+
+          <MessageInput
+            value={draft}
+            onChange={setDraft}
+            onSend={handleSendMessage}
+            senderMode={senderMode}
+          />
         </div>
       </div>
     </div>

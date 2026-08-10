@@ -148,14 +148,14 @@ Usuário final que deseja:
 5. [x] Definir o estado inicial do chat com um array vazio ou com mensagens de exemplo.
 
 ### Fase 3 - Renderização do chat
-6. Criar o componente de lista de mensagens.
-7. Criar o componente de bolha de mensagem com alinhamento condicional.
-8. Renderizar o histórico de mensagens na tela.
+6. [x] Criar o componente de lista de mensagens.
+7. [x] Criar o componente de bolha de mensagem com alinhamento condicional.
+8. [x] Renderizar o histórico de mensagens na tela.
 
 ### Fase 4 - Input e interação
-9. Criar o componente de input com área ajustável.
-10. Implementar o controle do texto digitado.
-11. Implementar o botão de envio com estado desabilitado quando não houver conteúdo.
+9. [x] Criar o componente de input com área ajustável.
+10. [x] Implementar o controle do texto digitado.
+11. [x] Implementar o botão de envio com estado desabilitado quando não houver conteúdo.
 
 ### Fase 5 - Toggle de remetente
 12. Criar o toggle para alternar entre usuário e robô.
