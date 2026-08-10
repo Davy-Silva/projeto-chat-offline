@@ -139,9 +139,9 @@ Usuário final que deseja:
 ## 10. Divisão de Tarefas em Ordem Progressiva de Implementação
 
 ### Fase 1 - Estrutura base
-1. Criar a estrutura inicial da tela principal.
-2. Definir o layout base com área de chat e área de input.
-3. Configurar o fundo visual e o container centralizado com largura máxima 2xl.
+1. [x] Criar a estrutura inicial da tela principal.
+2. [x] Definir o layout base com área de chat e área de input.
+3. [x] Configurar o fundo visual e o container centralizado com largura máxima 2xl.
 
 ### Fase 2 - Modelagem de dados
 4. Criar o tipo Message em src/types.
