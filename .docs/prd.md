@@ -158,9 +158,9 @@ Usuário final que deseja:
 11. [x] Implementar o botão de envio com estado desabilitado quando não houver conteúdo.
 
 ### Fase 5 - Toggle de remetente
-12. Criar o toggle para alternar entre usuário e robô.
-13. Implementar a lógica de envio de mensagem com base no remetente selecionado.
-14. Aplicar a estilização visual diferenciada no input quando o modo robô estiver ativo.
+12. [x] Criar o toggle para alternar entre usuário e robô.
+13. [x] Implementar a lógica de envio de mensagem com base no remetente selecionado.
+14. [x] Aplicar a estilização visual diferenciada no input quando o modo robô estiver ativo.
 
 ### Fase 6 - Polimento e validação
 15. Ajustar espaçamentos, cores e responsividade.

@@ -29,6 +29,7 @@ export function ChatScreen({
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [draft, setDraft] = useState("");
   const [senderMode, setSenderMode] = useState<MessageSender>("user");
+  const shouldShowSenderToggle = draft.trim().length > 0;
 
   const handleSendMessage = () => {
     const nextContent = draft.trim();
@@ -65,9 +66,11 @@ export function ChatScreen({
         </main>
 
         <div className="mt-4 flex flex-col gap-3">
-          <div className="flex justify-end">
-            <SenderToggle senderMode={senderMode} onToggle={setSenderMode} />
-          </div>
+          {shouldShowSenderToggle ? (
+            <div className="flex justify-end">
+              <SenderToggle senderMode={senderMode} onToggle={setSenderMode} />
+            </div>
+          ) : null}
 
           <MessageInput
             value={draft}
