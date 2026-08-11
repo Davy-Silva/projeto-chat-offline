@@ -11,7 +11,9 @@ export function MessageBubble({ message }: MessageBubbleProps) {
     <div className={`flex w-full ${isUser ? "justify-end" : "justify-start"}`}>
       <div
         className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
-          isUser ? "bg-stone-800 text-white" : "bg-white text-stone-700"
+          isUser
+            ? "bg-stone-800 text-white"
+            : "border border-stone-200 bg-white text-stone-700"
         }`}
       >
         <p className="text-[11px] uppercase tracking-[0.2em] opacity-70">

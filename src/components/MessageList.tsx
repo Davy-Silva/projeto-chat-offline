@@ -8,7 +8,7 @@ type MessageListProps = {
 export function MessageList({ messages }: MessageListProps) {
   if (messages.length === 0) {
     return (
-      <div className="px-4 py-8 text-center text-base font-medium text-stone-600">
+      <div className="flex h-full w-full items-center justify-center px-4 text-center text-base font-medium text-stone-600">
         <p>Nenhuma mensagem por enquanto</p>
       </div>
     );
