@@ -45,7 +45,7 @@ export function MessageInput({
 
   return (
     <div
-      className={`rounded-3xl border p-3 shadow-sm transition ${
+      className={`rounded-[1.25rem] border p-3 shadow-sm transition ${
         isRobotMode
           ? "border-violet-300 bg-violet-50"
           : "border-stone-200 bg-white"
@@ -70,7 +70,7 @@ export function MessageInput({
           type="button"
           onClick={onSend}
           disabled={!value.trim()}
-          className="rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-stone-700 disabled:cursor-not-allowed disabled:bg-stone-300"
+          className="shrink-0 rounded-full bg-stone-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-stone-700 disabled:cursor-not-allowed disabled:bg-stone-300"
         >
           Enviar
         </button>

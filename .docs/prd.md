@@ -163,9 +163,9 @@ Usuário final que deseja:
 14. [x] Aplicar a estilização visual diferenciada no input quando o modo robô estiver ativo.
 
 ### Fase 6 - Polimento e validação
-15. Ajustar espaçamentos, cores e responsividade.
-16. Verificar o comportamento visual do input fixo e do histórico.
-17. Validar a compilação e corrigir problemas de UI/TypeScript.
+15. [x] Ajustar espaçamentos, cores e responsividade.
+16. [x] Verificar o comportamento visual do input fixo e do histórico.
+17. [x] Validar a compilação e corrigir problemas de UI/TypeScript.
 
 ---
 

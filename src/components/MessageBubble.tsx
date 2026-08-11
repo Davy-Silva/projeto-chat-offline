@@ -8,7 +8,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.sender === "user";
 
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+    <div className={`flex w-full ${isUser ? "justify-end" : "justify-start"}`}>
       <div
         className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
           isUser ? "bg-stone-800 text-white" : "bg-white text-stone-700"
