@@ -145,14 +145,3 @@ Contribuições são bem-vindas. Se você quiser melhorar o projeto:
 2. Crie uma branch para a sua feature
 3. Faça o commit
 4. Abra um pull request
-
-## ✨ Autor
-
-Desenvolvido como projeto de estudo em React + TypeScript com foco em interface de chat front-end.
-
-Se quiser, também posso criar uma segunda versão com:
-
-- persistência local usando localStorage;
-- integração com OpenAI ou LLM;
-- autenticação simples;
-- suporte a múltiplos usuários por sala.
